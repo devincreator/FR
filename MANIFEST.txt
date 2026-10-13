@@ -29,6 +29,7 @@ references/14-market-sizing.md
 references/15-publication-writing.md
 references/16-release-compliance.md
 references/17-writing-forms.md
+references/18-deployment-and-updates.md
 scripts/audit_release.py
 scripts/ingest_feedback.py
 scripts/lint_report.py

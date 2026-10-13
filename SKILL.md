@@ -56,3 +56,5 @@ description: 面向证券行业和公司深度研究的证据驱动研究、需�
 
 ## 可扩展性
 这是通用证券研究 Skill，农药/化工示例收在 `references/11-pesticide-case-study.md`，不得把行业示例作为所有行业的先验。`memory/accepted_rules.md` 可追加新经验；永久修改核心规则须附来源和变更理由。
+
+自动反馈的 GitHub Issue 触发和权限边界见 `references/18-deployment-and-updates.md`。

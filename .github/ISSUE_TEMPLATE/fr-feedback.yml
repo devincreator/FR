@@ -1,18 +1,17 @@
 name: FR 研究复盘反馈
-description: 提交研究纠错，经自动化处理后生成规则更新 PR
+description: 提交可泛化纠错；标题触发自动候选更新，不上传完整聊天
+# A repository with no custom labels can still submit this form.
 title: '[FR feedback] '
-labels:
-  - fr-feedback
 body:
   - type: markdown
     attributes:
       value: |
-        只提交抽象的研究规则。请勿提交原始聊天、完整会议纪要、客户信息或保密附件。
+        请只提交可复用规则的结构化摘要。不得包含完整聊天、客户名称、非公开研究或未经授权资料。
   - type: textarea
     id: feedback
     attributes:
       label: 结构化反馈 JSON
-      description: 复制 templates/feedback.json 并填写单个 JSON 对象
+      description: 按 templates/feedback.json 结构填写单个 JSON 对象
       render: json
     validations:
       required: true

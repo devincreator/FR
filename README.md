@@ -51,3 +51,5 @@ bash scripts/publish-to-github.sh
 ```
 
 脚本将创建私有 `FR` 仓库、推送全部文件和建立 `fr-feedback` 标签；仓库已存在则停止，避免覆盖。复盘 JSON 验证后可用 `bash scripts/submit-feedback.sh path/to/feedback.json` 创建反馈 Issue 并触发 PR 工作流。
+
+**仓库首次部署与自动更新权限**见 `references/18-deployment-and-updates.md`。

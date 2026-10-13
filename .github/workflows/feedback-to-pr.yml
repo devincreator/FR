@@ -1,11 +1,11 @@
 name: FR feedback to learning PR
 on:
   issues:
-    types: [labeled]
+    types: [opened, labeled]
   workflow_dispatch:
     inputs:
       issue_number:
-        description: "Existing fr-feedback issue number"
+        description: "Existing FR feedback issue number"
         required: true
         type: string
 permissions:
@@ -14,19 +14,20 @@ permissions:
   issues: read
 jobs:
   propose:
-    # Only authorized maintainers apply this label. JSON must pass schema checks.
+    # Only owner-opened feedback issues are processed automatically;
+    # maintainers can re-run with workflow_dispatch.
     if: >-
-      github.event_name == 'workflow_dispatch' ||
-      (github.event_name == 'issues' && github.event.label.name == 'fr-feedback')
+      (github.event_name == 'workflow_dispatch') ||
+      (github.event_name == 'issues' && github.actor == github.repository_owner &&
+       ((github.event.action == 'opened' && startsWith(github.event.issue.title, '[FR feedback]')) ||
+        (github.event.action == 'labeled' && github.event.label.name == 'fr-feedback')))
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          persist-credentials: true
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Resolve issue body and create candidate changes
+      - name: Extract candidate feedback
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ISSUE_NUMBER: ${{ github.event.inputs.issue_number || github.event.issue.number }}
@@ -37,7 +38,8 @@ jobs:
           python scripts/parse_issue_feedback.py --issue-body /tmp/fr-issue.txt --output /tmp/fr-feedback.json
           python scripts/ingest_feedback.py --file /tmp/fr-feedback.json --repo .
           python scripts/verify_skill.py
-      - name: Create candidate PR
+          python -m unittest discover -s tests -q
+      - name: Open human-review PR
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ISSUE_NUMBER: ${{ github.event.inputs.issue_number || github.event.issue.number }}
@@ -46,15 +48,15 @@ jobs:
           set -euo pipefail
           git add memory/lessons.jsonl memory/accepted_rules.md
           if git diff --cached --quiet; then
-            echo 'No changes (duplicate or already processed).'
+            echo 'No changes for this issue.'
             exit 0
           fi
           branch="skill-evolution/issue-${ISSUE_NUMBER}"
           git switch -c "$branch"
           git config user.name 'fr-learning[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git commit -m "learn: capture rule from issue #${ISSUE_NUMBER}"
+          git commit -m "learn: capture feedback issue #${ISSUE_NUMBER}"
           git push -u origin "$branch"
           gh pr create --base main --head "$branch" \
             --title "learn: FR feedback #${ISSUE_NUMBER}" \
-            --body "Structured, privacy-screened knowledge update from #${ISSUE_NUMBER}. Review the rule for generality and compatibility before merging. Closes #${ISSUE_NUMBER}."
+            --body "Abstract research-rule candidate from #${ISSUE_NUMBER}. Verify generality, privacy and non-regression before merging."
