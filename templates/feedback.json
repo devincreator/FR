@@ -1,0 +1,16 @@
+{
+  "id": "example-20261012-a",
+  "date": "2026-10-12",
+  "category": "writing",
+  "context": "研报需要从终端需求切入",
+  "observed_problem": "用户只要求需求分析却加入大量供给细节",
+  "root_cause": "范围控制不足",
+  "new_rule": "当用户指定需求章节时，先完成终端应用、实际需求量、增长驱动和替代分析；供给移至独立章节。",
+  "scope": "行业/产品需求研究",
+  "evidence_type": "user_feedback",
+  "evidence_refs": ["session_feedback_abstract"],
+  "affected_files": ["references/03-demand-supply.md"],
+  "confidence": 0.95,
+  "user_confirmed": true,
+  "safe_to_upload": true
+}
