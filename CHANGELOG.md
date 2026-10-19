@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-10-19 — 错误复盘及防复发检查
+- 新增 `references/20-error-library-and-preflight.md`：对话暴露的17类错误、P0/P1/P2分级、五步核查流程与10个回归用例。
+- 将逐句原始证据、细分市场、时序政策、产能状态、工艺效果归因、官方来源真实性列为发布前门禁。
+- 更新 `SKILL.md`、`references/09-quality-gates.md` 及 `memory/accepted_rules.md`，确保后续调用时主动运行检查。
+
 ## 2026-10-19 — 行业研报逐句底稿与供给研究方法补充
 - 从硝化棉、医药硝化中间体、H酸及连续硝化研究复盘中提炼可跨行业复用的质控规则，不上传会话全文。
 - 新增 `references/19-sector-report-evidence-lessons.md`：论断分层、逐句底稿、官方来源、贸易与价格口径、有效产能台账、监管执行、技术效果归因、图表选择及否决项。
