@@ -13,11 +13,12 @@ description: 面向证券行业和公司深度研究的证据驱动研究、需�
 1. `memory/accepted_rules.md`：经过后续使用沉淀的约束，优先级低于用户当次明确指令与事实准确性要求。
 2. `references/00-research-operating-system.md`：问题定义、研究闭环与阶段划分。
 3. 根据任务选择相关参考：见下方「任务路由」。
-4. 交付前阅读 `references/09-quality-gates.md`；当次任务结束阅读 `references/10-continuous-improvement.md`、`references/12-analyst-competency-map.md`。
+4. **凡涉及研报写作、证据核查、产能、价格、政策、技术与行业结论，交付前必须核对 `references/20-error-library-and-preflight.md` 的 P0/P1 检查及回归测试，不能仅口头声称核实。**
+5. 交付前阅读 `references/09-quality-gates.md`；当次任务结束阅读 `references/10-continuous-improvement.md`、`references/12-analyst-competency-map.md`。
 
 ## 任务路由
 - **设计研究框架 / 行业深度**：`references/00-research-operating-system.md`、`03-demand-supply.md`、`07-report-writing.md`
-- **查市场空间、供需、渗透率**：`02-evidence-provenance.md`、`03-demand-supply.md`、`04-competitive-advantage.md`、`19-sector-report-evidence-lessons.md`
+- **查市场空间、供需、渗透率**：`02-evidence-provenance.md`、`03-demand-supply.md`、`04-competitive-advantage.md`、`19-sector-report-evidence-lessons.md`、`20-error-library-and-preflight.md`
 - **公司基本面 / 竞争壁垒**：`04-competitive-advantage.md`、`05-financial-model.md`
 - **预测、估值、目标价**：`05-financial-model.md`、`06-valuation.md`
 - **撰写正文、PPT、纪要、点评**：`07-report-writing.md`、`08-charts-and-deliverables.md`、`19-sector-report-evidence-lessons.md`
