@@ -17,11 +17,11 @@ description: 面向证券行业和公司深度研究的证据驱动研究、需�
 
 ## 任务路由
 - **设计研究框架 / 行业深度**：`references/00-research-operating-system.md`、`03-demand-supply.md`、`07-report-writing.md`
-- **查市场空间、供需、渗透率**：`02-evidence-provenance.md`、`03-demand-supply.md`、`04-competitive-advantage.md`
+- **查市场空间、供需、渗透率**：`02-evidence-provenance.md`、`03-demand-supply.md`、`04-competitive-advantage.md`、`19-sector-report-evidence-lessons.md`
 - **公司基本面 / 竞争壁垒**：`04-competitive-advantage.md`、`05-financial-model.md`
 - **预测、估值、目标价**：`05-financial-model.md`、`06-valuation.md`
-- **撰写正文、PPT、纪要、点评**：`07-report-writing.md`、`08-charts-and-deliverables.md`
-- **核查来源与数据**：`02-evidence-provenance.md`、`09-quality-gates.md`
+- **撰写正文、PPT、纪要、点评**：`07-report-writing.md`、`08-charts-and-deliverables.md`、`19-sector-report-evidence-lessons.md`
+- **核查来源与数据**：`02-evidence-provenance.md`、`09-quality-gates.md`、`19-sector-report-evidence-lessons.md`
 - **技能更新、吸收纠错**：`10-continuous-improvement.md`、`memory/accepted_rules.md`
 
 ## 不可妥协规则
