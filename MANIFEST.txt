@@ -37,6 +37,7 @@ scripts/parse_issue_feedback.py
 scripts/publish-to-github.sh
 scripts/submit-feedback.sh
 scripts/verify_skill.py
+templates/argument-chain.md
 templates/claim-evidence-ledger.md
 templates/feedback.json
 templates/forecast-assumptions.md

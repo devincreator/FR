@@ -18,6 +18,7 @@
 | `SKILL.md` | 调用入口、原则、任务路由 |
 | `references/` | 研究方法、证据、需求供给、财务模型、估值、写作、质控 |
 | `templates/` | 框架、证据台账、预测假设、复盘表 |
+| `templates/argument-chain.md` | 段落级论点树，连接章节、中心句、数据、图表及可追溯底稿 |
 | `memory/accepted_rules.md` | 后续使用已确认的抽象规则 |
 | `memory/lessons.jsonl` | 可追溯复盘记录（无原始私聊） |
 | `scripts/ingest_feedback.py` | 结构化反馈校验、去重、追加规则 |
